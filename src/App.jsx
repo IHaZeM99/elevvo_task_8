@@ -8,11 +8,13 @@ import { JobProvider } from "./context/JobContext.jsx"
 
 
 function App() {
+  // Use environment variable or detect production mode
+  const basename = import.meta.env.PROD ? '/elevvo_task_8' : '';
 
   return (
     <div className="font-mono text-gray-800">
       <JobProvider>
-        <Router>
+        <Router basename={basename}>
           <Routes>
             <Route path="/" exact element={
               <Layout>
